@@ -95,6 +95,9 @@ with(dat, tapply(count, spray, function(x) quantile(x,probs = c(0.25,0.75))))
 
 #4.g
 with(dat, tapply(count, spray, boxplot))
+
+# just for tesing the github at windows
+
 # title, date, author,name,affiliation and contact information
 # a summary(abstract) what is the topic and why it worth reading
 # an introduction: gernal context and giving what backgroud information to understand the report
