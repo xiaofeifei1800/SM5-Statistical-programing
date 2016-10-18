@@ -145,6 +145,23 @@ Exp = function(x,n)
 #5.a
 my_ellipsis_function = function(...) 
 {
-  list(...)
+  myargs = list(...)
+  adiag(myargs[[1]],myargs[[2]])
 }
 
+my_ellipsis_function(a <- matrix(1:6, 2, 3),b <- matrix(7:10, 2, 2))
+
+#5.b
+my_ellipsis_function = function(...) 
+{
+  myargs = list(...)
+  newmatrix = matrix()
+  for(i in 1:length(myargs))
+  {
+    newmatrix = adiag(newmatrix,myargs[[i]])
+  }
+  newmatrix = newmatrix[-1,-1]
+  return(newmatrix)
+}
+
+my_ellipsis_function(a <- matrix(1:6, 2, 3),b <- matrix(7:10, 2, 2))
