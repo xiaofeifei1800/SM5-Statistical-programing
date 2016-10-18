@@ -143,10 +143,8 @@ Exp = function(x,n)
 ?
 
 #5.a
-my_ellipsis_function <- function(...) {
-  input_list <- as.list(substitute(list(...)))
-  str(input_list)
-  NULL
+my_ellipsis_function = function(...) 
+{
+  list(...)
 }
-my_ellipsis_function(a=1:10,b=11:20,c=21:30)
 
