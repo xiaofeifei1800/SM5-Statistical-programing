@@ -49,11 +49,20 @@ random_walk = function(k)
 ma3 = function(x)
 {
   z = numeric()
-  for(i in 1:length(x))
+  for(i in 1:(length(x)-2))
   {
-    z[i] = mean(x[i],x[i+1],x[i+2])
+    z[i] = (x[i]+x[i+1]+x[i+2])/3
   }
   return(z)
+}
+
+ma3 = function(x) 
+{
+  n = length(x)
+  x1 = x[-(1:2)]
+  x2 = x[-c(1, n)]
+  x3 = x[-c(n - 1, n)]
+  (x1 + x2 + x3)/3
 }
 
 #2.b
@@ -165,3 +174,5 @@ my_ellipsis_function = function(...)
 }
 
 my_ellipsis_function(a <- matrix(1:6, 2, 3),b <- matrix(7:10, 2, 2))
+
+#5.c
